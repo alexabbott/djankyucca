@@ -1,0 +1,190 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Djank Yucca</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="hover-min.css">
+	<link rel="stylesheet" href="animate.css">
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="jquery.vimeo.api.min.js"></script>
+	<script src="http://w.soundcloud.com/player/api.js"></script>  
+	<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<script>
+	$(document).ready(function() {
+
+		var widget = SC.Widget(document.getElementById('soundcloud'));
+		widget.bind(SC.Widget.Events.READY, function() {
+			console.log('Ready...');
+		});
+		$('.logo-holder').click(function() {
+			widget.toggle();
+		});
+	});
+	</script>
+	<style>
+		body {
+			/*background: url('grey.gif');*/
+			/*background-size: cover;*/
+			/*background-repeat: repeat;*/
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		.cover {
+			position: absolute;
+			width: 120vw;
+			height: 120vh;
+			background: rgba(0,0,0,0);
+			z-index: 1;
+			top: -20px;
+		}
+		.nav {
+			width: 500px;
+			margin: 0 auto;
+			position: relative;
+			z-index: 2;
+		}
+		.nav-logo {
+			color: #fff;
+			font-size: 24px;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			cursor: pointer;
+			display: none;
+			z-index: 2;
+			position: relative;
+		}
+		.soundcloud-holder {
+			position: relative;
+			z-index: 2;
+		}
+		iframe#soundcloud {
+			margin: -4px auto 20px auto;
+			width: 500px;
+			height: 200px;
+			transition: all 1s;
+			z-index: 2;
+			position: relative;
+		}
+		.logo-holder {
+			width: 500px;
+			margin: 20px auto 12px auto;
+			z-index: 3;
+			position: relative;
+			cursor: pointer;
+			transition: all 1s;
+		}
+		.logo {
+			width: 100%;
+			position: relative;
+		}
+		.socials {
+			width: 500px;
+			margin: 20px auto 0 auto;
+			color: #fff;
+			text-align: center;
+			z-index: 2;
+			position: relative;
+		}
+		.socials a {
+			color: #fff;
+			margin: 0 25px;
+			transition: opacity 0.5s;
+			z-index: 2;
+			position: relative;
+		}
+		.socials a:hover {
+			opacity: 0.8;
+		}
+		.youtube {
+			position: fixed; 
+			z-index: -99; 
+			width: 1200px; 
+			/*height: 100%;*/
+			margin-top: -20px ;
+		}
+		.vimeoFrame {
+			height: 130%;
+			width: 130%;
+			margin-top: -140px;
+		}
+		.coming-text {
+			color: #fff;
+			font-family: 'Poiret One', cursive;
+			text-align: center;
+			font-size: 2em;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin-top: 20px;
+			z-index: 12;
+			position: relative;
+		}
+		.show-for-mobile-only {
+			display: none;
+		}
+		@media screen and (max-width: 480px) {
+			html, body {
+				overflow: hidden;
+				background: url('grey.gif');
+			}
+			.cover {
+				width: 120%;
+				height: 120%;
+				background: rgba(0,0,0,0.6);
+				z-index: 0;
+			}
+			iframe#soundcloud, .logo-holder, .socials {
+				width: 100%;
+			}
+			iframe#soundcloud {
+				height: 180px;
+			}
+			.nav-logo {
+				display: none;
+			}
+			.youtube {
+				display: none;
+			}
+			.show-for-mobile-only {
+				display: block;
+			}
+		}
+	</style>
+
+</head>
+<body class="animated fadeIn">
+
+	<div class="youtube">
+		<iframe src="https://player.vimeo.com/video/129406224?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0&badge=0" class="vimeoFrame" id="vimeo" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+
+		<div class="cover"></div>
+		<div class="socials animated fadeInDown">
+			<a href="https://soundcloud.com/djankyucca" target="_blank"><i class="fa fa-soundcloud hvr-grow"></i></a>
+			<a href="https://facebook.com/djankyucca" target="_blank"><i class="fa fa-facebook hvr-grow"></i></a>
+			<a href="https://twitter.com/djankyucca" target="_blank"><i class="fa fa-twitter hvr-grow"></i></a>
+		</div>
+		<div class="nav">
+			<i class="fa fa-bars nav-logo"></i>
+		</div>
+		<div class="logo-holder animated fadeInDown">
+			<img src="djankyuccalogo.jpg" alt="djank yucca" class="logo">
+		</div>
+		<div class="coming-text">
+			Coming<br class="show-for-mobile-only"> June 22nd, 2015
+		</div>
+<!-- 		<div class="soundcloud-holder animated fadeInUp">
+			<center><iframe id="soundcloud" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/1694491&amp;color=000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></iframe></center>
+		</div> -->
+		<script>
+			$(document).ready(function() {
+
+			    $("#vimeo").vimeo("setVolume", 0);
+
+			});
+		</script>
+</body>
+</html>
